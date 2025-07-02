@@ -1,0 +1,405 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Neha Kumari - Portfolio</title>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;600;700&display=swap" rel="stylesheet">
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Inter', sans-serif;
+      background-color: #0E0E10;
+      color: white;
+      line-height: 1.6;
+    }
+
+    nav {
+      background: rgba(18, 20, 27, 0.8);
+      backdrop-filter: blur(10px);
+      display: flex;
+      justify-content: space-between;
+      align-items: center;
+      padding: 1rem 2rem;
+      position: sticky;
+      top: 0;
+      z-index: 1000;
+      border-bottom: 1px solid rgba(255, 255, 255, 0.05);
+    }
+
+    nav .logo {
+      color: #2dd4bf;
+      font-weight: 600;
+      font-size: 1.2rem;
+      letter-spacing: 0.5px;
+    }
+
+    nav ul {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    nav ul li a {
+      color: white;
+      text-decoration: none;
+      font-weight: 500;
+      padding-bottom: 2px;
+      transition: all 0.3s ease;
+      border-bottom: 2px solid transparent;
+    }
+
+    nav ul li a:hover {
+      border-bottom: 2px solid #2dd4bf;
+      color: #2dd4bf;
+    }
+
+    .hero {
+      text-align: center;
+      padding: 6rem 1rem;
+      position: relative;
+      overflow: hidden;
+    }
+
+    .hero::before {
+      content: "";
+      position: absolute;
+      top: -100px;
+      left: -100px;
+      width: 200%;
+      height: 200%;
+      background: url('https://www.svgrepo.com/show/331655/molecule.svg') center center / contain no-repeat;
+      opacity: 0.05;
+      animation: float 30s linear infinite;
+      z-index: 0;
+    }
+
+    .hero h1,
+    .hero p {
+      position: relative;
+      z-index: 1;
+    }
+
+    .hero h1 {
+      font-size: 2.5rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .hero p {
+      color: #d1d5db;
+      font-size: 1.1rem;
+    }
+
+    @keyframes float {
+      0% {
+        transform: rotate(0deg) scale(1);
+      }
+
+      50% {
+        transform: rotate(180deg) scale(1.05);
+      }
+
+      100% {
+        transform: rotate(360deg) scale(1);
+      }
+    }
+
+    section {
+      padding: 4rem 2rem;
+      max-width: 1000px;
+      margin: auto;
+    }
+
+    h2 {
+      font-size: 1.8rem;
+      font-weight: 700;
+      margin-bottom: 1rem;
+    }
+
+    .text-gray {
+      color: #d1d5db;
+      margin-bottom: 2rem;
+    }
+
+    .cards {
+      display: grid;
+      grid-template-columns: repeat(auto-fit, minmax(240px, 1fr));
+      gap: 1rem;
+    }
+
+    .card {
+      background-color: #1f2937;
+      padding: 1rem 1.5rem;
+      border-radius: 0.75rem;
+      box-shadow: 0 0 10px rgba(0, 0, 0, 0.3);
+    }
+
+    .card h3 {
+      color: #2dd4bf;
+      margin-bottom: 0.5rem;
+      font-size: 1.2rem;
+    }
+
+    ul.projects {
+      list-style: disc inside;
+      color: #d1d5db;
+      margin-top: 1rem;
+    }
+
+    @media (min-width: 768px) {
+      .hero h1 {
+        font-size: 3.5rem;
+      }
+
+      nav .logo {
+        font-size: 1.25rem;
+      }
+    }
+
+    #molecular-bg {
+      position: fixed;
+      top: 0;
+      left: 0;
+      width: 100%;
+      height: 100%;
+      z-index: -1;
+      /* Push behind all content */
+    }
+
+    .hamburger {
+      display: none;
+      font-size: 1.5rem;
+      color: white;
+      cursor: pointer;
+    }
+
+    .nav-links {
+      display: flex;
+      gap: 1.5rem;
+      list-style: none;
+    }
+
+    @media (max-width: 768px) {
+      .hamburger {
+        display: block;
+      }
+
+      .nav-links {
+        display: none;
+        flex-direction: column;
+        background-color: rgba(18, 20, 27, 0.95);
+        position: absolute;
+        top: 60px;
+        right: 2rem;
+        padding: 1rem 1.5rem;
+        border-radius: 0.5rem;
+        box-shadow: 0 0 10px rgba(0, 0, 0, 0.5);
+      }
+
+      .nav-links.show {
+        display: flex;
+      }
+    }
+  </style>
+</head>
+
+<body>
+  <div id="molecular-bg"></div>
+
+  <nav>
+    <div class="logo">Neha Kumari</div>
+    <div class="hamburger" onclick="toggleNav()">☰</div>
+    <ul class="nav-links">
+      <li><a href="#home">Home</a></li>
+      <li><a href="#about">About</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#qualification">Qualification</a></li>
+      <li><a href="#skills">Skill</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+  </nav>
+
+
+  <section class="hero" id="home">
+
+
+
+    <h1>Neha Kumari</h1>
+    <p>Aspiring Web Developer | HTML, CSS, Java & PHP Learner</p>
+  </section>
+
+  <section id="about">
+    <h2>About Me</h2>
+    <p class="text-gray">
+
+
+      I'm a passionate and motivated Computer Science student with strong foundational skills in HTML, CSS, Core Java,
+      and basic PHP. I'm eager to learn, build, and grow in the field of software development. This portfolio showcases
+      my dedication and potential as I take the first steps into my professional journey.
+    </p>
+    <div class="cards">
+      <div class="card">
+        <h3>Skills</h3>
+        <p>HTML, CSS, Core Java, Basic PHP, Responsive Web Design</p>
+      </div>
+      <div class="card">
+        <h3>Qualifications</h3>
+        <p>Currently pursuing B.Sc. Computer Science at Sree Rama Krishna College of Arts and Science. Completed Master
+          of Software Technology course at TEC MAC.</p>
+      </div>
+      <div class="card">
+        <h3>Strengths</h3>
+        <p>Problem-solving, creativity, attention to detail, passion for interactive design</p>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects">
+    <h2>Projects</h2>
+    <p class="text-gray">
+      A showcase of some of the work I've created to practice and enhance my development skills.
+    </p>
+    <div class="cards">
+      <div class="card">
+        <h3>Coffee Shop Website</h3>
+        <p>A modern, responsive website for a fictional coffee shop. Built with HTML, CSS, and animations to create a
+          cozy user experience.</p>
+      </div>
+      <div class="card">
+        <h3>Login Page</h3>
+        <p>A clean and professional login interface using HTML, CSS, and JavaScript validation with mobile
+          responsiveness.</p>
+      </div>
+      <div class="card">
+        <h3>Signup Page</h3>
+        <p>User registration form with real-time validation and stylish design — fully responsive and accessible.</p>
+      </div>
+    </div>
+  </section>
+  <section id="qualification">
+    <h2>Qualification</h2>
+    <p class="text-gray">
+      My educational background and certifications that shape my journey as a software developer.
+    </p>
+    <div class="cards">
+      <div class="card">
+        <h3>Typewriting - Lower Class</h3>
+        <p>Successfully completed typewriting lower class certification, improving speed and accuracy in professional
+          typing.</p>
+      </div>
+      <div class="card">
+        <h3>Current Studies</h3>
+        <p>Currently pursuing my degree at Sree Rama Krishna College of Arts and Science, focusing on computer science.
+        </p>
+      </div>
+      <div class="card">
+        <h3>TEC MAC Course</h3>
+        <p>Completed a professional course in Master of Software Technology at TEC MAC, covering full-stack development
+          skills.</p>
+      </div>
+    </div>
+    <section id="skills">
+      <h2>Skills</h2>
+      <p class="text-gray">
+        Technologies and tools I am currently learning and working with to build responsive and user-friendly websites.
+      </p>
+      <div class="cards">
+        <div class="card">
+          <h3>Frontend</h3>
+          <p>HTML, CSS, Basic JavaScript, Responsive Design</p>
+        </div>
+        <div class="card">
+          <h3>Backend</h3>
+          <p>php , MySQL(Database)</p>
+        </div>
+        <div class="card">
+          <h3>Tools & Platforms</h3>
+          <p>Git, GitHub, VS Code</p>
+        </div>
+      </div>
+    </section>
+    <section id="contact">
+      <h2>Contact Me</h2>
+      <p class="text-gray">
+        Interested in working together or have a question? Feel free to reach out!
+      </p>
+      <div class="cards">
+        <div class="card">
+          <h3>Email</h3>
+          <p><a href="mailto:your-email@example.com" style="color: #2dd4bf;">nehakumariu744@gmail.com</a></p>
+        </div>
+        <div class="card">
+          <h3>LinkedIn</h3>
+          <p><a href="https://www.linkedin.com/in/yourprofile" target="_blank"
+              style="color: #2dd4bf;">linkedin.com/in/yourprofile</a></p>
+        </div>
+        <div class="card">
+          <h3>GitHub</h3>
+          <p><a href="https://github.com/nehawebdev" target="_blank"
+              style="color: #2dd4bf;">github.com/nehawebdev</a></p>
+        </div>
+      </div>
+    </section>
+
+
+    <script src="https://cdn.jsdelivr.net/npm/tsparticles@2/tsparticles.bundle.min.js"></script>
+    <script>
+      tsParticles.load("molecular-bg", {
+        background: {
+          color: {
+            value: "#0E0E10"
+          }
+        },
+        particles: {
+          number: {
+            value: 60
+          },
+          color: {
+            value: ["#ff3c3c", "#ffffff"]
+          },
+          shape: {
+            type: "circle"
+          },
+          links: {
+            enable: true,
+            distance: 120,
+            color: "#ffffff",
+            opacity: 0.3
+          },
+          move: {
+            enable: true,
+            speed: 1.2,
+            direction: "none",
+            outModes: "bounce"
+          },
+          opacity: {
+            value: 0.8
+          },
+          size: {
+            value: 4
+          }
+        },
+        fullScreen: {
+          enable: true,
+          zIndex: 0
+        }
+      });
+
+    </script>
+    <script src="./nav-toggle.js"></script>
+    <footer
+      style="text-align: center; padding: 2rem; color: #d1d5db; font-size: 0.9rem; border-top: 1px solid rgba(255,255,255,0.1); background-color: #0E0E10;">
+      © 2025 Neha Kumari. All rights reserved.
+    </footer>
+
+
+</body>
+
+</html>
